@@ -7,9 +7,8 @@ import { useRouter } from "next/router";
 import { CloseEye, OpenEye } from "@/svg";
 import ErrorMsg from "../common/error-msg";
 import { notifyError, notifySuccess } from "@/utils/toast";
-import { useRegisterUserMutation } from "@/redux/features/auth/authApi";
 
-// schema
+// ✅ Yup validation schema
 const schema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
@@ -21,38 +20,61 @@ const schema = Yup.object().shape({
 
 const RegisterForm = () => {
   const [showPass, setShowPass] = useState(false);
-  const [registerUser, {}] = useRegisterUserMutation();
   const router = useRouter();
   const { redirect } = router.query;
-  // react hook form
-  const {register,handleSubmit,formState: { errors },reset} = useForm({
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     resolver: yupResolver(schema),
   });
-  // on submit
-  const onSubmit = (data) => {
-    registerUser({
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    }).then((result) => {
-      if (result?.error) {
-        notifyError("Register Failed");
-      } else {
-        notifySuccess(result?.data?.message);
-        // router.push(redirect || "/");
+
+  // ✅ Real backend integration here
+  const onSubmit = async (data) => {
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        notifyError(result.message || 'Registration failed');
+        return;
       }
-    });
+
+      // Save token & user
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('user', JSON.stringify(result.user));
+
+      notifySuccess("Registration successful");
+      router.push(redirect || "/");
+    } catch (err) {
+      notifyError("Something went wrong. Please try again.");
+    }
+
     reset();
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="tp-login-input-wrapper">
         <div className="tp-login-input-box">
           <div className="tp-login-input">
             <input
-              {...register("name", { required: `Name is required!` })}
+              {...register("name")}
               id="name"
-              name="name"
               type="text"
               placeholder="Shahnewaz Sakil"
             />
@@ -62,12 +84,12 @@ const RegisterForm = () => {
           </div>
           <ErrorMsg msg={errors.name?.message} />
         </div>
+
         <div className="tp-login-input-box">
           <div className="tp-login-input">
             <input
-              {...register("email", { required: `Email is required!` })}
+              {...register("email")}
               id="email"
-              name="email"
               type="email"
               placeholder="shofy@mail.com"
             />
@@ -77,13 +99,13 @@ const RegisterForm = () => {
           </div>
           <ErrorMsg msg={errors.email?.message} />
         </div>
+
         <div className="tp-login-input-box">
           <div className="p-relative">
             <div className="tp-login-input">
               <input
-                {...register("password", { required: `Password is required!` })}
+                {...register("password")}
                 id="password"
-                name="password"
                 type={showPass ? "text" : "password"}
                 placeholder="Min. 6 character"
               />
@@ -100,14 +122,12 @@ const RegisterForm = () => {
           <ErrorMsg msg={errors.password?.message} />
         </div>
       </div>
+
       <div className="tp-login-suggetions d-sm-flex align-items-center justify-content-between mb-20">
         <div className="tp-login-remeber">
           <input
-            {...register("remember", {
-              required: `Terms and Conditions is required!`,
-            })}
+            {...register("remember")}
             id="remember"
-            name="remember"
             type="checkbox"
           />
           <label htmlFor="remember">
@@ -116,6 +136,7 @@ const RegisterForm = () => {
           <ErrorMsg msg={errors.remember?.message} />
         </div>
       </div>
+
       <div className="tp-login-bottom">
         <button type="submit" className="tp-login-btn w-100">
           Sign Up

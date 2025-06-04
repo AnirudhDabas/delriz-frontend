@@ -1,19 +1,29 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import Cookies from "js-cookie";
+import { notifySuccess } from "@/utils/toast";
+
 // internal
 import { Box, DeliveryTwo, Processing, Truck } from "@/svg";
 import { userLoggedOut } from "@/redux/features/auth/authSlice";
 
 const NavProfileTab = ({ orderData }) => {
-  const {user} = useSelector(state => state.auth)
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const router = useRouter();
-  // handle logout
+
+  // ✅ handle logout
   const handleLogout = () => {
+    Cookies.remove("userInfo");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
     dispatch(userLoggedOut());
-    router.push('/')
-  }
+    notifySuccess("Logged out successfully!");
+    router.push("/login");
+  };
+
   return (
     <div className="profile__main">
       <div className="profile__main-top pb-80">
@@ -40,7 +50,9 @@ const NavProfileTab = ({ orderData }) => {
             <div className="profile__main-info-item">
               <div className="profile__main-info-icon">
                 <span>
-                  <span className="profile-icon-count profile-download">{orderData?.totalDoc}</span>
+                  <span className="profile-icon-count profile-download">
+                    {orderData?.totalDoc}
+                  </span>
                   <Box />
                 </span>
               </div>
@@ -51,7 +63,9 @@ const NavProfileTab = ({ orderData }) => {
             <div className="profile__main-info-item">
               <div className="profile__main-info-icon">
                 <span>
-                  <span className="profile-icon-count profile-order">{orderData?.pending}</span>
+                  <span className="profile-icon-count profile-order">
+                    {orderData?.pending}
+                  </span>
                   <Processing />
                 </span>
               </div>
