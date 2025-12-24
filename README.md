@@ -1,9 +1,9 @@
-# Shofy Fashion – Full Stack eCommerce Web Application + Admin Panel
+# DELRIZ Fashion – Full Stack eCommerce Web Application + Admin Panel
 
 
-![Shofy Image Banner](https://i.ibb.co/vckrzmN/shofy-fashion-banner.png)
+![DELRIZ Image Banner](https://i.ibb.co/vckrzmN/delriz-fashion-banner.png)
 
-Shofy fashion is a powerful and modern full stack eCommerce web application built using Next.js, Express.js, MongoDB with Mongoose, Redux Toolkit, RTK Query, Stripe payment method, Bootstrap 5, and Sass. It includes a feature-rich admin panel for easy management and control of your online store.
+DELRIZ fashion is a powerful and modern full stack eCommerce web application built using Next.js, Express.js, MongoDB with Mongoose, Redux Toolkit, RTK Query, Stripe payment method, Bootstrap 5, and Sass. It includes a feature-rich admin panel for easy management and control of your online store.
 
 ## Features Overview
 
@@ -13,13 +13,13 @@ Shofy fashion is a powerful and modern full stack eCommerce web application buil
 - **Mongoose:** Mongoose provides a straightforward, schema-based solution to model your application data, offering built-in type casting, validation, and query building.
 - **Stripe:** Stripe offers online payment solutions, allowing you to create a secure and reliable website with e-commerce functionality.
 - **Nodemailer:** Nodemailer is a module for Node.js applications that facilitates easy email sending, keeping your users informed and engaged.
-- **Authentication:** Shofy includes features for Google login, user registration, email verification, forgot password, reset password, and profile updates.
+- **Authentication:** DELRIZ includes features for Google login, user registration, email verification, forgot password, reset password, and profile updates.
 - **Redux Toolkit:** Manage state effortlessly with Redux Toolkit, providing a convenient and efficient way to handle state in your application.
 - **RTK Query:** RTK Query is a powerful data fetching and caching tool, ensuring efficient data retrieval for a smoother user experience.
-- **Typescript + Next.js App Directory:** Shofy leverages TypeScript in combination with Next.js, enhancing code reliability and maintainability.
+- **Typescript + Next.js App Directory:** DELRIZ leverages TypeScript in combination with Next.js, enhancing code reliability and maintainability.
 - **Form Validation:** Ensure data accuracy and consistency with form validation capabilities.
 - **Bootstrap 5 (latest Version) Framework:** Bootstrap is a popular HTML, CSS, and JS framework for responsive, mobile-first projects.
-- **Responsive Layout Design:** Shofy is fully responsive across all devices, providing a seamless experience for your customers.
+- **Responsive Layout Design:** DELRIZ is fully responsive across all devices, providing a seamless experience for your customers.
 - **Touch Friendly:** The web application is designed for easy browsing on touch devices, making it accessible to a wide range of users.
 
 ## Full Features List
@@ -47,14 +47,14 @@ Shofy fashion is a powerful and modern full stack eCommerce web application buil
 - **Multiple Home Pages:** Choose from a variety of home page designs to best suit your business.
 - **Inner Pages:** Access a range of inner pages for various sections of your eCommerce website.
 - **Image Background:** Customize page backgrounds with visually appealing images.
-- **Flexible and Multi-Purpose:** Shofy is versatile and can be adapted to various eCommerce niches.
+- **Flexible and Multi-Purpose:** DELRIZ is versatile and can be adapted to various eCommerce niches.
 - **Valid CSS3:** Comply with modern CSS standards for a better user experience.
 - **24/7 Awesome Support:** Get continuous support for any inquiries or issues you may encounter.
 - **Detailed Documentation:** Access comprehensive documentation for easy development and setup.
 
 ## Powerful Additional Features
 
-- **All E-commerce Features and Apps Included:** Shofy provides a comprehensive eCommerce solution with all the essential features and apps needed for a successful online store.
+- **All E-commerce Features and Apps Included:** DELRIZ provides a comprehensive eCommerce solution with all the essential features and apps needed for a successful online store.
 - **Variation Swatch:** Create clean and professional product pages with variation swatches that capture your customer's attention and allow easy selection of product variations.
 - **Filter Variations, Pagination, Filters by Size & Color:** Improve user experience and boost conversion rates by reducing the time needed for customers to complete their orders through filtering options and pagination.
 - **Video Gallery:** Offer customers a detailed view of products with an engaging video gallery that showcases products from different angles or in use.
@@ -67,12 +67,12 @@ Shofy fashion is a powerful and modern full stack eCommerce web application buil
 
 ## Installation and Usage
 
-To get started with Shofy, follow these steps:
+To get started with DELRIZ, follow these steps:
 
 1. Clone the repository:
 
    ```bash
-   https://github.com/Hamed-Hasan/shofy-fashion-ecommerce-client.git
+   https://github.com/Hamed-Hasan/delriz-fashion-ecommerce-client.git
    ```
 
 2. Install dependencies:
@@ -99,19 +99,19 @@ To get started with Shofy, follow these steps:
 
 ## Client Side Live Link
 
-[Shofy Fashion Client Side Live Link](https://shofy-fashion-ecommerce-client.vercel.app)
+[DELRIZ Fashion Client Side Live Link](https://delriz-fashion-ecommerce-client.vercel.app)
 
 ## Server Side Live Link
 
-[Shofy Fashion Server Side Live Link](https://shofy-backend.vercel.app)
+[DELRIZ Fashion Server Side Live Link](https://delriz-backend.vercel.app)
 
 ## Client Side Repo
 
-[Shofy fashion Client Side Repo](https://github.com/Hamed-Hasan/shofy-fashion-ecommerce-client.git)
+[DELRIZ fashion Client Side Repo](https://github.com/Hamed-Hasan/delriz-fashion-ecommerce-client.git)
 
 ## Server Side Repo
 
-[Shofy fashion Server Side Repo](https://github.com/Hamed-Hasan/shofy-fashion-ecommerce-backend.git)
+[DELRIZ fashion Server Side Repo](https://github.com/Hamed-Hasan/delriz-fashion-ecommerce-backend.git)
 
 ## Sources and Credits
 
@@ -120,9 +120,9 @@ To get started with Shofy, follow these steps:
 - Google Fonts
 - Free Font Awesome Icons by Fontawesome
 
-## Thank You for Choosing Shofy!
+## Thank You for Choosing DELRIZ!
 
-We hope you find Shofy to be a powerful and effective solution for your eCommerce needs. Should you encounter
+We hope you find DELRIZ to be a powerful and effective solution for your eCommerce needs. Should you encounter
 
  any issues or have any questions, please feel free to reach out to our support team at swe.hamedhasan@gmail.com. Happy selling!
 
