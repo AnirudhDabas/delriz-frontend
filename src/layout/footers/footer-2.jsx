@@ -4,7 +4,6 @@ import Link from 'next/link';
 // internal
 import social_data from '@/data/social-data';
 import { Email, Location } from '@/svg';
-import logo from '@assets/img/logo/logo.svg';
 import pay from '@assets/img/footer/footer-pay.png';
 
 const FooterTwo = () => {
@@ -19,7 +18,7 @@ const FooterTwo = () => {
                   <div className="tp-footer-widget footer-col-4-1 mb-50">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" />
+                        <span>DELRIZ</span>
                       </Link>
                     </div>
                     <div className="tp-footer-widget-content">

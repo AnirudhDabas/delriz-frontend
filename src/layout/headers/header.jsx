@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 // internal
 import Menus from "./header-com/menus";
 import useSticky from "@/hooks/use-sticky";
-import logo from "@assets/img/logo/logo.svg";
 import useCartInfo from "@/hooks/use-cart-info";
 import OffCanvas from "@/components/common/off-canvas";
 import { openCartMini } from "@/redux/features/cartSlice";
@@ -55,7 +53,7 @@ const Header = () => {
                 <div className="col-xl-2 col-lg-2 col-md-4 col-6">
                   <div className="logo">
                     <Link href="/">
-                      <Image src={logo} alt="logo" />
+                      <span>DELRIZ</span>
                     </Link>
                   </div>
                 </div>
@@ -131,7 +129,7 @@ const Header = () => {
               <div className="col-xl-3 col-lg-3 col-md-3 col-6">
                 <div className="logo">
                   <Link href="/">
-                    <Image src={logo} alt="logo" />
+                    <span>DELRIZ</span>
                   </Link>
                 </div>
               </div>
